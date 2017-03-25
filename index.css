@@ -1,0 +1,178 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+html,body{
+	height:100%;
+}
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+ul{
+	list-style: none;
+}
+#app{
+	overflow:auto;
+	min-height: 100%;
+	background-image: url(img/background.png);
+	background-size:cover;
+	background-repeat:no-repeat;
+	overflow:;
+	font-family: "microsoft yahei";
+	color:white;
+	font-size:20px;
+}
+
+#signInAndSignUp{
+	height:307px;
+	width:370px;
+	background-image: url(img/signIn.png);
+	margin-left:-185px;
+	margin-top:-153px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	border-radius:5px;
+}
+#signInAndSignUp .wrapper{
+	width:280px;
+	margin:80px auto 0 auto;
+}
+#signInAndSignUp .signUpOrLogin{
+	margin-bottom:30px;
+	text-align:center;
+}
+.su-si .formRow{
+	border:1px solid rgba(255,255,255,.3);
+	border-radius:5px;
+	margin-bottom:10px;
+	height: 40px;
+	line-height: 40px;
+	box-shadow:0px 0px 2px 1px rgba(0,0,0,.2) inset;
+	padding-left:10px;
+}
+.su-si .formRow input{
+	vertical-align:middle;
+	background: rgba(0,0,0,.0);	
+	outline:none;
+	border:none;
+	color:white;
+	font-size:20px;
+	width:200px;
+	margin-left:10px;
+}
+.su-si .formRow input::-webkit-input-placeholder{
+	color:rgba(255,255,255,.6);
+	font-size:16px;
+}
+.su-si .formActions input{
+	width:100%;
+	height:30px;
+	font-size:20px;
+	color:white;
+	height: 40px;
+	border-radius:5px;
+	background:rgb(145,196,108);
+	outline:none;
+	border:1px solid rgba(255,255,255,.5);
+}
+.su-si .formActions input:active{
+	box-shadow:0px 0px 2px 1px rgba(0,0,0,.2) inset;
+}
+.icon-mima:before { 
+	content: "\e61e"; 
+	font-size:25px;
+}
+.icon-yonghuming:before { 
+	content: "\e66b"; 
+	font-size:25px;
+	position: relative;
+	top:3px;
+}
+
+#todo .curUser{
+	height:50px;
+	background:rgba(255,255,255,.3);
+	line-height:50px;
+	color:#fff;
+	font-size:16px;
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,.2);
+	width:100%;
+	position: fixed;
+	top:0;
+	left:0;
+}
+#todo .curUser>div{
+	float:right;
+	margin-right:30px;
+}
+#todo a{
+	text-decoration:none;
+	color:#fff;
+	/*font-size:16px;*/
+}
+#todo .content{
+	width:800px;
+	margin:0 auto;
+	margin-top:150px;
+}
+#todo .newTask{
+	text-align:center;
+}
+#todo .newTask>input{
+	height:30px;
+	width:300px;
+	border-radius:5px;
+	outline:none;
+	border:1px solid rgba(255,255,255,.5);
+	box-shadow:0px 0px 2px 1px rgba(0,0,0,.2) inset;
+	background: rgba(255,255,255,.3);
+	color:white;
+	font-size:20px;
+}
+#todo .todos{
+	margin-top:50px;
+}
+#todo .todos>li{
+	margin-bottom:10px;
+	background:rgba(255,255,255,.3);
+	border-radius:5px;
+}
+#todo .todos>li:before{
+	content:"";
+	display:inline-block;
+	height:31px;
+	width:10px;
+	background:rgb(145,196,108);
+	vertical-align: middle;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px; 
+	margin-right:5px;
+}
+#todo .todos li>div{
+	float:right;
+}
+#todo .todos a{
+	display:inline-block;
+	height:30px;
+	width:30px;
+	text-decoration:none;
+	color:white;
+	border-radius:50%;
+	background:rgb(145,196,108);
+	line-height: 30px;
+	text-align:center;
+	margin-right:15px;
+	margin-left:15px;
+}
+#todo .todos li>input{
+	height:20px;
+	width:20px;
+	vertical-align: middle;
+	margin-right:10px;
+}
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ToDoList</title>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_uj6d7tgjimhg2e29.css">
+</head>
+<body>
+	<div id="app">
+		<section id="signInAndSignUp" v-if="!curUser">
+			<div class="wrapper">
+				<div class="signUpOrLogin">
+					<label for=""><input type="radio" name="type" value="signUp" v-model="actionType">注册</label>
+					<label for=""><input type="radio" name="type" value="login" v-model="actionType">登录</label>
+				</div>
+				<div class="signUp su-si" v-if="actionType=='signUp'">
+					<form @submit.prevent="signUp">
+						<div class="formRow"><i class="iconfont icon-yonghuming"></i><input type="text" placeholder="请输入账号"  v-model="formData.username"></div>
+						<div class="formRow"><i class="iconfont icon-mima"></i><input type="password" placeholder="请输入密码" v-model="formData.password"></div>
+						<div class="formActions"><input type="submit" value="注册"></div>
+					</form>
+				</div>
+				<div class="login su-si" v-if="actionType=='login'">
+					<form @submit.prevent="login">
+						<div class="formRow"><i class="iconfont icon-yonghuming"></i><input type="text" placeholder="请输入账号" v-model="formData.username"></div>
+						<div class="formRow"><i class="iconfont icon-mima"></i><input type="password" placeholder="请输入密码" v-model="formData.password"></div>
+						<div class="formActions"><input type="submit" value="登录"></div>
+					</form>
+				</div>
+			</div>	
+		</section>
+		<section id="todo" v-if="curUser">
+			<div class="curUser clearfix">
+				<div>
+					<span class="userName">{{curUser.username}}</span>
+					|&nbsp<a href="javascript:void(0)" @click="signOut">登出</a>
+				</div>
+			</div>
+			<div class="content">
+				<div class="newTask">
+					<input type="text" placeholder="使用回车添加todo" v-model="newTodo" @keyup.enter="addone">
+				</div>
+				<ul class="todos clearfix">
+					<li v-for="list in todoList">
+						<input type="checkbox" v-model="list.done" @click="updateTodos">
+						{{list.title}}
+						<!-- <span v-if="list.done">已完成</span>
+						<span v-else>未完成</span> -->
+						<div>
+							<span>{{list.creatTime}}</span>
+							<a href="javascript:void(0)" @click="deletone(list)">X</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+	<script src="bundle.js"></script>
+</body>
+</html>
